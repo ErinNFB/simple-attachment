@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attachment Style</title>
+<style>
+body {
+background-color: white;
+font-family: Helvetica;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+padding: 5px;
+}
+
+label {
+width: 100%;
+display: inline-block;
+margin-bottom: 1em;
+}
+
+input {
+margin-right: 10px;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+</style>
+</head>
+<body>
+<div id="main">
+<p>Reference: Hazan, C., & Shaver, P. R. (1987). Romantic love conceptualized as an attachment process. Journal
+of Personality and Social Psychology, 52, 511-524.</p>
+<div id="header"><h1>Simple Attachment Style Assessment</h1></div>
+
+<form  id="form1">
+<p>Which statement best describes you?</p>
+<label><input type="radio" name="age" value="3" />I am somewhat uncomfortable being close to others. I find it difficult to trust them completely, difficult to allow myself to depend on them. I am nervous when anyone gets too close, and often, others want me to be closer that I feel comfortable being.</label>
+<label><input type="radio" name="age" value="6" />I find it relatively east to get close to others and am comfortable depending on them and having them depend on me. I don't worry about being abandoned or about someone getting too close to me.</label>
+<label><input type="radio" name="age" value="9" />I find that others are reluctant to get as close as I would like. I often worry that my partner doesn't really love me or won't want to stay with me. I want to get very close to others, and this sometimes scares people away.</label>
+
+
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	   
+	   age = parseInt(document.querySelector('input[name = "age"]:checked').value);  
+	  
+	 
+	   
+	   total= age;
+	   
+	   
+
+	   if(total < 4) {
+document.getElementById("answer2").innerHTML = "You may have an avoidant attachment style.";
+}
+
+   if(total >=4 && total < 7) {
+document.getElementById("answer2").innerHTML = "You may have a secure attachment style.";
+}
+	
+	if(total >=7) {
+document.getElementById("answer2").innerHTML = "You may have an anxious attachment style.";
+}   
+	   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+</body>
+</html>
+	
